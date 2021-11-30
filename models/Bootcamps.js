@@ -1,7 +1,7 @@
 const mongoose =  require('mongoose')
 
 
-const  BootscampSchema = new mongoose.Schema({
+const  BootcampSchema = new mongoose.Schema({
     name:{
         type:String,
         required:[true,'Please add a name'],
@@ -22,15 +22,17 @@ const  BootscampSchema = new mongoose.Schema({
             'Please use a valid URL with HTTP OR HTTPS'
         ]
     },
-    description:{
+    phone:{
         type:String,
         maxlength:[20,'Phone number must not be more than 20 characters']
     },
-    email:String,
-    match:[
-        /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
-        'Please add a valid email'
-    ],
+    email:{
+        type:String,
+        match:[
+            /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/,
+            'Please add a valid email'
+        ]
+    },
     address:{
         type:String,
         required:[true,'Please add an address']
@@ -40,11 +42,11 @@ const  BootscampSchema = new mongoose.Schema({
         type: {
             type: String,
             enum: ['Point'],
-            required: true
+            // required: true
         },
         coordinates: {
             type: [Number],
-            required: true,
+            // required: true,
             index:'2dsphere'
         },
         formattedAdress: String,
@@ -99,4 +101,4 @@ const  BootscampSchema = new mongoose.Schema({
     }
 })
 
-module.exports = mongoose.model('Bootcamp', BootscampSchema)
+module.exports = mongoose.model('Bootcamp', BootcampSchema)
