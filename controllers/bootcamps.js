@@ -1,7 +1,7 @@
 const Bootcamps = require('../models/Bootcamps')
-const Bootcamp = require('../models/Bootcamps')
+// const Bootcamp = require('../models/Bootcamps')
 const ErrorResponse = require('../utils/errorResponse')
-const asyncWrapper = require('../middleware/asyncWrapper')
+const asyncWrapper = require('../middleware/asyncHandler')
 // @desc   Get all bootcamps
 // @route  GET /api/v1/bootcamps
 // @access Public
